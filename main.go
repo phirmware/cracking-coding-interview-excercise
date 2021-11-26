@@ -7,15 +7,18 @@ func main() {
 
 	l.Prepend("a")
 	l.append("b")
-	l.append("b")
-	l.append("a")
 	l.append("c")
+	l.append("d")
+	l.append("e")
 
-	fmt.Println("Start removing duplicates")
-	RemoveDups(l)
-	fmt.Println("Done removing duplicates")
+	node := ReturnkthToLast(l, 1)
+	fmt.Printf("%+v", node)
 
-	moveThroughList(l)
+	// fmt.Println("Start removing duplicates")
+	// RemoveDups(l)
+	// fmt.Println("Done removing duplicates")
+
+	// moveThroughList(l)
 
 }
 
