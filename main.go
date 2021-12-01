@@ -5,21 +5,18 @@ import "fmt"
 func main() {
 	l := &LinkedList{}
 
-	l.Prepend("a")
-	l.append("b")
 	l.append("c")
-	l.append("d")
-	l.append("e")
+	l.append("h")
+	l.append("i")
+	l.append("b")
+	l.append("u")
+	l.append("z")
+	l.append("o")
+	l.append("r")
 
-	node := ReturnkthToLast(l, 1)
-	fmt.Printf("%+v", node)
-
-	// fmt.Println("Start removing duplicates")
-	// RemoveDups(l)
-	// fmt.Println("Done removing duplicates")
-
-	// moveThroughList(l)
-
+	fmt.Println("checking palindrome")
+	result := PanlindromeLinkedList(l.Head)
+	fmt.Println(result)
 }
 
 func moveThroughList(l *LinkedList) bool {

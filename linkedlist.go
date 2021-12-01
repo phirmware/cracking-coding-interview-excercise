@@ -3,7 +3,7 @@ package main
 type Node struct {
 	Next     *Node
 	Previous *Node
-	Value    string
+	Value    interface{}
 }
 
 type LinkedList struct {
@@ -11,7 +11,7 @@ type LinkedList struct {
 	Tail *Node
 }
 
-func (l *LinkedList) append(value string) *LinkedList {
+func (l *LinkedList) append(value interface{}) *LinkedList {
 	if l.Tail == nil {
 		l.Tail = &Node{Value: value, Previous: nil, Next: nil}
 		l.Head = l.Tail
@@ -26,7 +26,7 @@ func (l *LinkedList) append(value string) *LinkedList {
 	return l
 }
 
-func (l *LinkedList) Prepend(value string) *LinkedList {
+func (l *LinkedList) Prepend(value interface{}) *LinkedList {
 	if l.Head == nil {
 		l.Head = &Node{Previous: nil, Value: value, Next: nil}
 		l.Tail = l.Head
@@ -71,7 +71,7 @@ func (l *LinkedList) RemoveNode(n *Node) bool {
 		n.Previous.Next = nil
 		return true
 	}
-	
+
 	n.Previous.Next = n.Next
 	n.Next.Previous = n.Previous
 
@@ -97,7 +97,7 @@ func (l *LinkedList) RemoveHead() *LinkedList {
 	return l
 }
 
-func (l *LinkedList) Search(value string) *Node {
+func (l *LinkedList) Search(value interface{}) *Node {
 	currentNode := l.Head
 
 	for {
